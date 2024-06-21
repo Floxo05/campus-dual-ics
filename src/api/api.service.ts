@@ -11,7 +11,7 @@ export class ApiService {
   constructor() {
     this.loadData();
     // Schedule the fetchData method to run every 10 minutes
-    schedule.scheduleJob('* * * * *', () => this.loadData());
+    schedule.scheduleJob('*/10 * * * *', () => this.loadData());
   }
 
   async loadData() {
