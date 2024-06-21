@@ -62,8 +62,8 @@ export class ApiService {
   getICSData(): string {
     let eventString = 'BEGIN:VCALENDAR\n' +
       'VERSION:2.0\n' +
-      'CALSCALE:GREGORIAN\n' +
-      'METHOD:PUBLISH\n' +
+      'PRODID:-////NONSGML campus-dual.de iCalcreator 2.12//\n' +
+      'X-AFILE:iCal.php\n' +
       'X-WR-TIMEZONE:Europe/Berlin\n';
 
     for (const event of this.data) {
@@ -81,7 +81,7 @@ export class ApiService {
     const convertDate = (date: Array<number>): string => {
         let out = '';
         if (Array.isArray(event.start)) {
-            event.start.forEach((val, index) => {
+            date.forEach((val, index) => {
                 // if (index === 0) {
                 //     return
                 // }
