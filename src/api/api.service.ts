@@ -35,7 +35,7 @@ export class ApiService {
         startDate.getFullYear(),
         startDate.getMonth() + 1, // Monate sind 0-basiert in JavaScript
         startDate.getDate(),
-        startDate.getHours(),
+        startDate.getHours() + 2,
         startDate.getMinutes(),
       ];
 
@@ -43,7 +43,7 @@ export class ApiService {
         endDate.getFullYear(),
         endDate.getMonth() + 1,
         endDate.getDate(),
-        endDate.getHours(),
+        endDate.getHours() + 2,
         endDate.getMinutes(),
       ];
 
