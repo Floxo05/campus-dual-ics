@@ -82,9 +82,6 @@ export class ApiService {
         let out = '';
         if (Array.isArray(event.start)) {
             date.forEach((val, index) => {
-                // if (index === 0) {
-                //     return
-                // }
                 const str_val = val.toString();
                 if (str_val.length === 1) {
                     out += '0' + str_val;
@@ -117,7 +114,7 @@ export class ApiService {
     eventString += `DTEND:${end}\n`;
     eventString += `DTSTAMP:${new Date().toISOString().replace(/[-:.]/g, '')}Z\n`;
     eventString += `UID:${Math.random().toString(36).substring(2)}@example.com\n`;
-    eventString += `DESCRIPTION:${event.description}\n`;
+    eventString += `DESCRIPTION:${event.description}\\n${event.location}\\n${event.organizer.name}\n`;
     eventString += `SUMMARY:${event.title}\n`;
     eventString += 'END:VEVENT\n';
 
