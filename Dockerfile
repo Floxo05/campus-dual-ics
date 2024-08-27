@@ -5,7 +5,7 @@ FROM node:22-alpine
 WORKDIR /app
 
 # Installiere die Abhängigkeiten der Anwendung
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json tsconfig.json tsconfig.build.json nest-cli.json ./
 RUN npm install --production
 
 # Installiere NestJS CLI global, falls benötigt
